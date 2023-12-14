@@ -9,9 +9,9 @@
     - [GitHub](https://github.com/Username)
     - [LinkedIn](https://www.linkedin.com/in/Username/)
 
-- Name
-    - [GitHub](https://github.com/Username)
-    - [LinkedIn](https://www.linkedin.com/in/Username/)
+- Oliver Craigie
+    - [GitHub](https://github.com/ogc1231)
+    - [LinkedIn](https://www.linkedin.com/in/olivercraigie/)
 
 - Daniel Callaghan
     - [GitHub](https://github.com/xiaoniuniu89)
