@@ -1,8 +1,11 @@
 /* jshint esversion: 11 */
 
 const queryParams = {
+    // omit for multiple and true/false
     type: 'multiple',
+    // omit for any difficulty
     difficulty: 'easy',
+    // omit for default which is 10
     amount: 12
   };
   
