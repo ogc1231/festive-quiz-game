@@ -52,21 +52,27 @@ header {
     background: linear-gradient(rgba(255, 0, 0, 0.455), rgba(0, 128, 0, 0.455)),
       url(../images/hero.png) center/cover no-repeat;
   }
+
   .banner {
     min-height: 100vh;
     display: grid;
     place-items: center;
     text-align: center;
   }
+
   .container h1 {
+    font-family: var(--font-christmas);
     color: var(--clr-primary-1);
     text-transform: uppercase;
   }
+
   .container h2 {
-    color: var(--clr-white);
+    font-family: var(--font-christmas);
+    color: var(--clr-primary-2);
     text-transform: uppercase;
   }
-  .container p {
+
+  .container h3 {
     color: var(--clr-white);
     max-width: 25rem;
     margin: 0 auto;
@@ -75,22 +81,25 @@ header {
 
   /* Button styling with hover effect */
 .btn-play {
+    font-family: var(--font-christmas);
     text-transform: uppercase;
-    background: transparent;
-    color: var(--clr-primary-2);
+    background: var(--clr-secondary-2);
+    color: var(--clr-secondary-1);
     padding: 0.375rem 0.75rem;
     display: inline-block;
     transition: all 0.3s linear;
     font-size: 0.875rem;
-    border: 1px solid var(--clr-primary-2);
+    border: 1px solid var(--clr-secondary-1);
     cursor: pointer;
     box-shadow: 0 0 20px 10px rgba(191, 191, 191, 0.339);
     border-radius: var(--radius);
   }
+
   .btn-play:hover {
     transition: all 0.3s linear;
     background: var(--clr-secondary-3);
     color: var(--clr-secondary-1);
+  }
 
 /* About section */
 .about-container h2 {
