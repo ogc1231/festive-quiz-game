@@ -37,3 +37,12 @@
     border: none!important;
     box-shadow: none!important;
 }
+
+@keyframes countdown {
+    from { width: 100%; }
+    to { width: 0%; }
+}
+
+.progress-bar-animate {
+    animation: countdown 20s linear;
+}
