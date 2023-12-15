@@ -49,8 +49,8 @@ nav {
 /* hero */
 header {
     min-height: 100vh;
-    background: linear-gradient(rgba(255, 0, 0, 0.200), rgba(0, 128, 0, 0.200)),
-      url(../images/hero-test.webp) center/cover no-repeat;
+    background: linear-gradient(rgba(255, 0, 0, 0.455), rgba(0, 128, 0, 0.455)),
+      url(../images/hero.png) center/cover no-repeat;
   }
   .banner {
     min-height: 100vh;
