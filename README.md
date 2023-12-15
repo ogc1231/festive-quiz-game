@@ -25,5 +25,10 @@
 - Johnny Trinh
   - [GitHub](https://github.com/johnnysontrinh)
   - [LinkedIn](https://www.linkedin.com/in/johnny-trinh-732755123/)
+ 
+-  Renwar Pappiland
+  - [GitHub](https://github.com/Renwar-P)
+  - [LinkedIn(https://www.linkedin.com/in/renwar-pappiland-7aa1a414a/)
+  
 
 ## Wireframes
