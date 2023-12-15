@@ -22,7 +22,7 @@ async function fetchTriviaQuestions() {
     .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(queryParams[key])}`)
     .join("&");
 
-  const response = await fetch(`https://trivia-api-jsmx.onrender.com/trivia?${queryString}`);
+  const response = await fetch(`https://trivia-api-fe683df325a4.herokuapp.com/trivia?${queryString}`);
   const data = await response.json();
 
   if (data) {
