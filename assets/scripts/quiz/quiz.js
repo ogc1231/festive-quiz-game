@@ -181,12 +181,11 @@ document.querySelector("#quiz").innerHTML = `
   <div id="quizContainer" class="container">
     <h1 id="question" class="my-3">Loading...</h1>
   </div>
-  <div class="my-3 col-md-6" >
+  <div class="my-3 col-md-4" >
     <div class="mb-2">
         <strong>Total Points: </strong><span id="totalPointsDisplay"></span>
     </div>
     <div class="mb-2">
-    <strong>Total Points: </strong><span id="totalPointsDisplay"></span>
 </div>
 <label for="betInput" class="form-label">Place Your Bet:</label>
 <input type="range" id="betInput" class="form-range" min="0" max="100" step="1" value="0">
