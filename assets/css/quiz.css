@@ -31,3 +31,9 @@
 #nextButton:hover {
   background-color: #0056b3;
 }
+
+
+#quizContainer, #answers, #nextButtonContainer{
+    border: none!important;
+    box-shadow: none!important;
+}
