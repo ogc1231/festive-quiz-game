@@ -1,6 +1,28 @@
 # festive-quiz-game
 
-## Collaborators
+
+### Colors Scheme
+
+[coolors.co](https://coolors.co/0d6efd-000000-212529-6c757d-ffffff)
+
+![screenshot](documentation/readme/coolors.png)
+
+```css
+:root {
+/* Colours */
+--clr-primary-1:#FF0000;
+--clr-primary-2: #008000;
+/* Secondary colour */
+--clr-secondary-1: #FFD700;
+--clr-secondary-2: #BFBFBF;
+--clr-secondary-3: #CD7F32;
+--clr-secondary-4: #0028FF;
+/* white/black colours */
+--clr-white: #FFFFFF;
+--clr-black: #111111;
+}
+```
+## Team
 
 - Name
 
