@@ -12,11 +12,6 @@ body {
     text-align: center;
     min-height: 100vh;
     font-size: 1rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .credit {
@@ -30,6 +25,7 @@ body {
 
 
 nav {
+    margin: 0 auto;
     color: white;
     padding: 10px 20px;
     text-align: center;
