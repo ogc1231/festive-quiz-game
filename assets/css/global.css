@@ -39,7 +39,6 @@ body {
     color: red;
 }
 
-
 nav {
     margin: 0 auto;
     color: white;
@@ -92,4 +91,11 @@ header {
     transition: all 0.3s linear;
     background: var(--clr-secondary-3);
     color: var(--clr-secondary-1);
-  }
+
+/* About section */
+.about-container h2 {
+  font-family: var(--font-christmas);
+  color: var(--clr-primary-1);
+  text-transform: uppercase;
+}
+
