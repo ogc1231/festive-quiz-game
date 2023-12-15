@@ -1,3 +1,6 @@
+
+/* global styles only in here  */
+
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +17,6 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: aquamarine;
 }
 
 .credit {
@@ -28,7 +30,6 @@ body {
 
 
 nav {
-    background-color: rgb(39, 168, 147);
     color: white;
     padding: 10px 20px;
     text-align: center;
