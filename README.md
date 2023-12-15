@@ -1,6 +1,5 @@
 # festive-quiz-game
 
-## Collaborators
 
 ### Colors Scheme
 
@@ -23,6 +22,7 @@
 --clr-black: #111111;
 }
 ```
+## Team
 
 - Name
 
