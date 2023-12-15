@@ -28,7 +28,7 @@
  
 -  Renwar Pappiland
   - [GitHub](https://github.com/Renwar-P)
-  - [LinkedIn(https://www.linkedin.com/in/renwar-pappiland-7aa1a414a/)
+  - [LinkedIn](https://www.linkedin.com/in/renwar-pappiland-7aa1a414a/)
   
 
 ## Wireframes
