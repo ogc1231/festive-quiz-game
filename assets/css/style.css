@@ -9,25 +9,11 @@ body {
     text-align: center;
     min-height: 100vh;
     font-size: 1rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    background-color: aquamarine;
-}
-
-.credit {
-    text-align: center;
-}
-
-.credit-link {
-    text-decoration: none;
-    color: red;
 }
 
 
 nav {
+    margin: 0 auto;
     background-color: rgb(39, 168, 147);
     color: white;
     padding: 10px 20px;
