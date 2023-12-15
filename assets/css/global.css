@@ -43,6 +43,7 @@ nav {
     color: white;
     padding: 10px 20px;
     text-align: center;
+}
 
 /* hero */
 header {
@@ -72,3 +73,21 @@ header {
   }
 
   /* Button styling with hover effect */
+.btn-play {
+    text-transform: uppercase;
+    background: transparent;
+    color: var(--clr-primary-2);
+    padding: 0.375rem 0.75rem;
+    display: inline-block;
+    transition: all 0.3s linear;
+    font-size: 0.875rem;
+    border: 1px solid var(--clr-primary-2);
+    cursor: pointer;
+    box-shadow: 0 0 20px 10px rgba(191, 191, 191, 0.339);
+    border-radius: var(--radius);
+  }
+  .btn-play:hover {
+    transition: all 0.3s linear;
+    background: var(--clr-secondary-3);
+    color: var(--clr-secondary-1);
+  }
