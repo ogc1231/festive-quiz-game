@@ -11,6 +11,8 @@
 /* White/black colours */
 --clr-white: #ffffff;
 --clr-black: #111111;
+/* Font family */
+--font-christmas: 'Great Vibes', cursive;
 }
 
 /* global styles only in here  */
