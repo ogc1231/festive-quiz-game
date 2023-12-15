@@ -43,4 +43,32 @@ nav {
     color: white;
     padding: 10px 20px;
     text-align: center;
-}
+
+/* hero */
+header {
+    min-height: 100vh;
+    background: linear-gradient(rgba(255, 0, 0, 0.200), rgba(0, 128, 0, 0.200)),
+      url(../images/hero-test.webp) center/cover no-repeat;
+  }
+  .banner {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+  }
+  .container h1 {
+    color: var(--clr-primary-1);
+    text-transform: uppercase;
+  }
+  .container h2 {
+    color: var(--clr-white);
+    text-transform: uppercase;
+  }
+  .container p {
+    color: var(--clr-white);
+    max-width: 25rem;
+    margin: 0 auto;
+    margin-bottom: 1.25rem;
+  }
+
+  /* Button styling with hover effect */
