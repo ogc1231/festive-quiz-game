@@ -175,3 +175,23 @@ figure.effect-team:hover p {
 figure.effect-team:hover {
   border: 8px solid var(--clr-primary-1);
 }
+
+/* Arrow-up button */
+.top-link {
+  font-size: 2rem;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--clr-secondary-2);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  color: var(--clr-secondary-1);
+  visibility: hidden;
+  z-index: -100;
+}
+
+.show-link {
+  visibility: visible;
+  z-index: 1000;
+}
