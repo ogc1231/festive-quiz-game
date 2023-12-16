@@ -102,6 +102,7 @@ function displayAnswer(isCorrect, isTimeout) {
       <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
         <p class="text-center">${answerFeedback}</p>
         ${correctAnswerText}
+        <p>Interesting Fact: Placeholder for interesting trivia about question</p>
         <div id="nextButtonContainer"></div>
       </div>
     </div>
