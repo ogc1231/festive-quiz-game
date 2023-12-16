@@ -10,14 +10,9 @@ document
     let questionType = document.querySelector(
       'input[name="inlineRadioOptions2"]:checked'
     ).value;
-    let numberOfQuestions = document.querySelector(
-      "#number-of-questions"
-    ).value;
-
     const formData = {
       difficultyLevel: difficultyLevel,
       questionType: questionType,
-      numberOfQuestions: numberOfQuestions,
     };
 
     saveFormData(formData);
