@@ -28,8 +28,9 @@ body {
 
 
 nav {
-    background-color: rgb(39, 168, 147);
-    color: white;
+    background-color: var(--clr-primary-2 #008000);
+    color: var(--clr-primary-1 #FF0000);
     padding: 10px 20px;
     text-align: center;
+   
 }
