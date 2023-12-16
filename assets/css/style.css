@@ -27,7 +27,7 @@ header {
 
   .container h2 {
     font-family: var(--font-christmas);
-    color: var(--clr-primary-2);
+    color: var(--clr-secondary-4);
     text-transform: uppercase;
   }
 
