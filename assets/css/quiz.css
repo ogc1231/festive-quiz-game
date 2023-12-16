@@ -32,17 +32,22 @@
   background-color: #0056b3;
 }
 
-
-#quizContainer, #answers, #nextButtonContainer{
-    border: none!important;
-    box-shadow: none!important;
+#quizContainer,
+#answers,
+#nextButtonContainer {
+  border: none !important;
+  box-shadow: none !important;
 }
 
 @keyframes countdown {
-    from { width: 100%; }
-    to { width: 0%; }
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
 }
 
 .progress-bar-animate {
-    animation: countdown 20s linear;
+  animation: countdown 20s linear;
 }

@@ -1,50 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Meta tag for search engines -->
-        <meta name="description" content="Festive Quiz, Quizmas Elves, christmas, general knowledge, history" >
-        <meta name="keywords" content="Festive Quiz, Quizmas Elves, christmas, questions and answers">
-        <!-- Title -->
-        <title>Quizmas Elves Festive Quiz</title>
-        <!-- Favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon-snowman.png" type="image/x-icon">
-        <!-- Font Awesome -->
-        <link 
-            rel="stylesheet" 
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
-            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
-            crossorigin="anonymous" 
-            referrerpolicy="no-referrer" 
-        />
-        <script 
-            src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" 
-            integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ==" 
-            crossorigin="anonymous" 
-            referrerpolicy="no-referrer">
-        </script>
-        <!-- Boostrap -->
-        <link 
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
-            rel="stylesheet" 
-            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
-            crossorigin="anonymous"
-        >
-        <script 
-          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
-          integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
-          crossorigin="anonymous"
-        >
-        </script>
-        <!-- CSS -->
-        <link rel="stylesheet" href="assets/css/global.css">
-    </head>
-<body>
-    
-
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Meta tag for search engines -->
+    <meta
+      name="description"
+      content="Festive Quiz, Quizmas Elves, christmas, general knowledge, history"
+    />
+    <meta
+      name="keywords"
+      content="Festive Quiz, Quizmas Elves, christmas, questions and answers"
+    />
+    <!-- Title -->
+    <title>Quizmas Elves Festive Quiz</title>
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon-snowman.png"
+      type="image/x-icon"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"
+      integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- Boostrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/global.css" />
+  </head>
+  <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand" href="index.html">Quiz Game</a>
@@ -57,7 +63,7 @@
                 <a class="nav-link active" aria-current="page" href="index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="quizpage.html">Quiz</a>
+                <a class="nav-link" href="quiz.html">Quiz</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="settings.html">Settings</a>
@@ -88,42 +94,120 @@
             <label class="form-check-label" for="inlineRadio3">Hard</label>
           </div>
         </div>
+      </div>
+    </nav>
 
-        <div>
-          <h3>Question Type:</h3>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="question-type" value="mixed" checked="" required>
-            <label class="form-check-label" for="inlineRadio21">Mixed - Default</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions2" value="mutiple-choice-only">
-            <label class="form-check-label" for="inlineRadio22">Mutiple Choice Only</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions2" value="true-or-false-only">
-            <label class="form-check-label" for="inlineRadio23">True or False Only</label>
-          </div>
+    <!-- Form -->
+    <form class="container" id="settings-form">
+      <div>
+        <h3>Difficulty Level:</h3>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="inlineRadioOptions"
+            value="mixed"
+            id="difficulty-level"
+            checked=""
+            required
+          />
+          <label class="form-check-label" for="inlineRadio1"
+            >Mixed - Default</label
+          >
         </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="inlineRadioOptions"
+            value="easy"
+          />
+          <label class="form-check-label" for="inlineRadio2">Easy</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="inlineRadioOptions"
+            value="medium"
+          />
+          <label class="form-check-label" for="inlineRadio3">Medium</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="inlineRadioOptions"
+            value="hard"
+          />
+          <label class="form-check-label" for="inlineRadio3">Hard</label>
+        </div>
+      </div>
 
-        <div>
-          <h3>Number of Questions:</h3>
-          <select class="bootstrap-select" name="optionChoice" id="number-of-questions">
-            <option value="12" checked=""  >12 - Default</option>
-            <option value="15">15</option>
-            <option value="20">20</option>
-            <option value="25">25</option>
-            <option value="30">30</option>
-          </select>
+      <div>
+        <h3>Question Type:</h3>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="inlineRadioOptions2"
+            id="question-type"
+            value="mixed"
+            checked=""
+            required
+          />
+          <label class="form-check-label" for="inlineRadio21"
+            >Mixed - Default</label
+          >
         </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="inlineRadioOptions2"
+            value="mutiple-choice-only"
+          />
+          <label class="form-check-label" for="inlineRadio22"
+            >Mutiple Choice Only</label
+          >
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="inlineRadioOptions2"
+            value="true-or-false-only"
+          />
+          <label class="form-check-label" for="inlineRadio23"
+            >True or False Only</label
+          >
+        </div>
+      </div>
 
-        <div>
-          <button id="save-set-btn" type="submit" value="submit">Save Settings</button>
-          <button id="reset-btn" type="reset" value="reset">Reset Default</button>
-        </div>
-      </form>
-      
+      <div>
+        <h3>Number of Questions:</h3>
+        <select
+          class="bootstrap-select"
+          name="optionChoice"
+          id="number-of-questions"
+        >
+          <option value="12" checked="">12 - Default</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+          <option value="25">25</option>
+          <option value="30">30</option>
+        </select>
+      </div>
+
+      <div>
+        <button id="save-set-btn" type="submit" value="submit">
+          Save Settings
+        </button>
+        <button id="reset-btn" type="reset" value="reset">Reset Default</button>
+      </div>
+    </form>
 
     <script src="assets/scripts/script.js"></script>
-
-</body>
+    <script src="assets/scripts/settings.js"></script>
+  </body>
 </html>
