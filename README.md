@@ -22,17 +22,51 @@
 --clr-black: #111111;
 }
 ```
-## Team
+
+
+
+
+# Christmas Quiz Game
+
+![Game Screenshot/Logo]
+
+## Description
+Welcome to the Christmas Quiz Game! This game is designed to test your knowledge about Christmas traditions, history, songs, movies, and more. Challenge yourself or play with friends and family to see who knows the most about the festive season!
+
+## Features
+- Multiple-choice questions about various Christmas-related topics.
+- Interactive and user-friendly interface.
+- Scores and leaderboard to track performance.
+- Levels or difficulty settings for different player experiences.
+
+## How to Play
+
+1. **Starting the Game**
+    - Run the game:
+
+2. **Game Instructions**
+    - Select a difficulty level (easy, medium, hard).
+    - Answer each multiple-choice question within the given time limit.
+    - Track your score and compare it with others on the leaderboard.
+    - Decide how much you want to bet.
+  
+  ## Requirements
+- Node.js
+- Web browser (Chrome, Firefox, Safari, etc.)
+
+## Technologies Used
+- HTML/CSS/JavaScript (or any specific libraries or frameworks used)
+- [List any additional technologies or tools]
+
+## Credits
+- Game developed by:
+  # Team
 
 - Name
 
   - [GitHub](https://github.com/Username)
   - [LinkedIn](https://www.linkedin.com/in/Username/)
 
-- Pearse D'Arcy
-
-  - [GitHub](https://github.com/pearsedarcy)
-  - [LinkedIn](https://www.linkedin.com/in/pearsedarcy/)
 
 - Oliver Craigie
 
@@ -48,9 +82,15 @@
   - [GitHub](https://github.com/johnnysontrinh)
   - [LinkedIn](https://www.linkedin.com/in/johnny-trinh-732755123/)
  
--  Renwar Pappiland
+- Renwar Pappiland
   - [GitHub](https://github.com/Renwar-P)
   - [LinkedIn](https://www.linkedin.com/in/renwar-pappiland-7aa1a414a/)
-  
 
-## Wireframes
+- Attribution for any external resources used (images, libraries, etc.)
+
+## License
+This project is licensed under the [License Name]. See the [LICENSE](LICENSE) file for details.
+
+## Screenshots/Demo
+![Screenshot 1]
+![Screenshot 2]
