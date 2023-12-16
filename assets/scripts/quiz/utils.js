@@ -23,14 +23,16 @@ async function fetchTriviaQuestions() {
   const data = await response.json();
 
   if (data) {
-    questions = data.map(q => {
+    questions = data.map((q, index) => {
       return {
         question: q.question,
         type: q.type,
         correctAnswer: q.correct_answer,
-        incorrectAnswers: q.incorrect_answers || []
+        incorrectAnswers: q.incorrect_answers || [],
+        imageUrl: `/assets/images/day${index + 1}` 
       };
     });
+    console.log(questions)
   } else {
     throw new Error("No data received");
   }

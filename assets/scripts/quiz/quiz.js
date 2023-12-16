@@ -3,7 +3,7 @@ import {
   initializeQuiz,
   questions,
   goToNextQuestion,
-} from "./useQuiz.js";
+} from "./utils.js";
 import {
   updateUserPoints,
   quizState,
@@ -106,7 +106,14 @@ function finishQuiz() {
 
 function onComplete() {
   const quizContainer = document.querySelector("#quiz");
-  quizContainer.innerHTML = `<h2>Finished!</h2>`;
+  const html = `
+  <div class="finish-screen">
+        <img src="assets/images/12Days.png" alt="Quiz Rules" class="img-fluid">
+        <a id="startButton" href="quiz.html" class="btn btn-primary my-3">Play again</a>
+        <a id="startButton" href="index.html" class="btn btn-primary my-3">Back to Homepage</a>
+      </div>
+  `
+  quizContainer.innerHTML = html;
 }
 
 function updateQuestion() {
@@ -197,7 +204,14 @@ document.querySelector("#quiz").innerHTML = `
 
 function displayGameOverMessage() {
   const quizContainer = document.querySelector("#quiz");
-  quizContainer.innerHTML = `<h2>You Died!</h2>`;
+  const html = `
+  <div class="start-screen">
+        <img src="assets/images/crash.png" alt="Quiz Rules" class="img-fluid">
+        <a id="startButton" href="quiz.html" class="btn btn-primary my-3">Play Again</a>
+        <a id="startButton" href="index.html" class="btn btn-primary my-3">Back to Home</a>
+  </div>
+  `
+  quizContainer.innerHTML = html;
 }
 
 initializeQuiz()
