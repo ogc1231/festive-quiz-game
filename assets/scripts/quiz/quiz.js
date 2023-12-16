@@ -45,6 +45,7 @@ function startTimer() {
 }
 
 function handleTimeOut() {
+  updateUserPoints(-10); // todo 10 for easy, 15 for medium or 20 for difficult etc
   handleAnswer(false, true);
 }
 
@@ -93,7 +94,7 @@ function displayAnswer(isCorrect, isTimeout) {
   let correctAnswerText = isCorrect
     ? ""
     : `<p>Correct Answer: ${currentQuestion.correctAnswer}</p>`;
-  const triviaText = `<p>Interesting Fact: ${currentQuestion.trivia}</p>`
+  const triviaText = `<p>Interesting Fact: ${currentQuestion.trivia}</p>`;
 
   quizContainer.innerHTML = `
     <div class="row answer-screen animate__animated animate__fadeIn">
@@ -195,8 +196,16 @@ function updateQuestion() {
     const answerButton = document.createElement("button");
     answerButton.className = "btn btn-info w-100";
     answerButton.textContent = answer;
-    answerButton.onclick = () =>
-      handleAnswer(answer === currentQuestion.correctAnswer);
+    if (currentQuestion.type === "boolean") {
+      answerButton.onclick = () =>
+        handleAnswer(
+          answer.toLowerCase() ===
+            currentQuestion.correctAnswer.toString().toLowerCase()
+        );
+    } else {
+      answerButton.onclick = () =>
+        handleAnswer(answer === currentQuestion.correctAnswer);
+    }
     answerCol.appendChild(answerButton);
     answersContainer.appendChild(answerCol);
   });
