@@ -1,4 +1,4 @@
-let questions = [];
+export let questions = [];
 let currentQuestionIndex = 0;
 
 export function getCurrentQuestion() {
@@ -7,9 +7,6 @@ export function getCurrentQuestion() {
 
 export function goToNextQuestion() {
   currentQuestionIndex++;
-  if (currentQuestionIndex >= questions.length) {
-    currentQuestionIndex = 0;
-  }
 }
 
 export function getQuestions() {
@@ -17,7 +14,7 @@ export function getQuestions() {
 }
 
 async function fetchTriviaQuestions() {
-  const queryParams = { amount: 12 };
+  const queryParams = { amount: 12, type: 'boolean' };
   const queryString = Object.keys(queryParams)
     .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(queryParams[key])}`)
     .join("&");
