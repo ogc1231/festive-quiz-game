@@ -34,6 +34,7 @@ async function fetchTriviaQuestions() {
         type: q.type,
         correctAnswer: q.correct_answer,
         incorrectAnswers: q.incorrect_answers || [],
+        trivia: q.interesting_fact,
         imageUrl: `/assets/images/day${index + 1}.png`,
       };
     });

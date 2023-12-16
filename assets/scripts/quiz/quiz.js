@@ -93,6 +93,7 @@ function displayAnswer(isCorrect, isTimeout) {
   let correctAnswerText = isCorrect
     ? ""
     : `<p>Correct Answer: ${currentQuestion.correctAnswer}</p>`;
+  const triviaText = `<p>Interesting Fact: ${currentQuestion.trivia}</p>`
 
   quizContainer.innerHTML = `
     <div class="row answer-screen animate__animated animate__fadeIn">
@@ -102,7 +103,7 @@ function displayAnswer(isCorrect, isTimeout) {
       <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
         <p class="text-center">${answerFeedback}</p>
         ${correctAnswerText}
-        <p>Interesting Fact: Placeholder for interesting trivia about question</p>
+        ${triviaText}
         <div id="nextButtonContainer"></div>
       </div>
     </div>
