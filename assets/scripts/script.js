@@ -1,3 +1,4 @@
+// Save settings to localstorage
 document.getElementById('settings-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -21,3 +22,11 @@ function saveFormData(formData) {
 
     localStorage.setItem('formData', JSON.stringify(storedFormData));
 }
+
+
+// Clear localstorage
+const resetBtn = document.getElementById('reset-btn')
+
+resetBtn.addEventListener('click', function() {
+    localStorage.clear();
+})
