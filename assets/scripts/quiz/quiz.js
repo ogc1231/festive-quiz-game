@@ -3,6 +3,7 @@ import {
   initializeQuiz,
   questions,
   goToNextQuestion,
+  resetProgressBar,
 } from "./utils.js";
 import {
   updateUserPoints,
@@ -11,6 +12,23 @@ import {
   updateQuestionIndex,
   updateGameState,
 } from "./quizState.js";
+
+// initial ui
+const initialHtml = `<div id="quizContainer" class="container animate__animated animate__fadeIn">
+    <h1 id="question" class="my-3">Loading...</h1>
+  </div>
+  <div class="my-3 col-md-4" id="betContainer" >
+    <div class="mb-2">
+        <strong>Total Points: </strong><span id="totalPointsDisplay"></span>
+    </div>
+    <div class="mb-2">
+</div>
+<label for="betInput" class="form-label">Place Your Bet:</label>
+<input type="range" id="betInput" class="form-range" min="0" max="100" step="1" value="0">
+
+<span id="betValueDisplay">0</span>
+</div>
+`;
 
 let timer;
 let timeLeft = 12; // todo: make this dynamic based on difficulty setting
@@ -30,37 +48,27 @@ function handleTimeOut() {
   handleAnswer(false, true);
 }
 
-function resetProgressBar() {
-  const progressBar = document.querySelector("#timerProgress");
-  progressBar.classList.remove("progress-bar-animate");
-  void progressBar.offsetWidth; // force reflow/repaint
-  progressBar.style.width = "100%";
-}
-
 function handleAnswer(isCorrect, isTimeout = false) {
   const betAmount = quizState.userBet;
   clearInterval(timer);
   resetProgressBar();
   let multiplier = 1;
   if (timeLeft > 9)
-    multiplier = 2; // todo: make this dynamic based of diffculty setting , 80%, 65 % etc
+    multiplier = 2; // todo: make this dynamic based on difficulty setting
   else if (timeLeft > 5) multiplier = 1.5;
 
   const pointsAwarded = isCorrect ? betAmount * multiplier : -betAmount;
   updateUserPoints(pointsAwarded);
-  if (isTimeout) {
-    alert("You ran out of time");
-  } else {
-    alert(isCorrect ? "Correct!" : "Incorrect!");
-  }
+
   const answerButtons = document.querySelectorAll("#answers button");
   answerButtons.forEach((button) => {
     button.disabled = true;
   });
   const betInput = document.querySelector("#betInput");
+  const betContainer = document.querySelector("#betContainer");
   betInput.disabled = true;
+  betContainer.style.display = "none";
   updateBetInputConstraints();
-  renderNextQuestionButton();
 
   betInput.value = 0;
   updateUserBet(0);
@@ -70,6 +78,37 @@ function handleAnswer(isCorrect, isTimeout = false) {
     displayGameOverMessage();
     return;
   }
+
+  displayAnswer(isCorrect, isTimeout);
+}
+
+function displayAnswer(isCorrect, isTimeout) {
+  const quizContainer = document.getElementById("quizContainer");
+  const currentQuestion = getCurrentQuestion();
+  let answerFeedback = isTimeout
+    ? "Time Out"
+    : isCorrect
+    ? "Correct!"
+    : "Incorrect!";
+  let correctAnswerText = isCorrect
+    ? ""
+    : `<p>Correct Answer: ${currentQuestion.correctAnswer}</p>`;
+  const triviaText = `<p>Interesting Fact: ${currentQuestion.trivia}</p>`
+
+  quizContainer.innerHTML = `
+    <div class="row answer-screen animate__animated animate__fadeIn">
+      <div class="col-md-6">
+        <img src="${currentQuestion.imageUrl}" alt="Question Image" class="img-fluid">
+      </div>
+      <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
+        <p class="text-center">${answerFeedback}</p>
+        ${correctAnswerText}
+        ${triviaText}
+        <div id="nextButtonContainer"></div>
+      </div>
+    </div>
+  `;
+  renderNextQuestionButton();
 }
 
 function renderNextQuestionButton() {
@@ -107,66 +146,66 @@ function finishQuiz() {
 function onComplete() {
   const quizContainer = document.querySelector("#quiz");
   const html = `
-  <div class="finish-screen">
-        <img src="assets/images/12Days.png" alt="Quiz Rules" class="img-fluid">
-        <a id="startButton" href="quiz.html" class="btn btn-primary my-3">Play again</a>
-        <a id="startButton" href="index.html" class="btn btn-primary my-3">Back to Homepage</a>
+    <div class="container animate__animated animate__fadeIn">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="assets/images/12Days.png" alt="Quiz Rules" class="img-fluid">
+        </div>
+        <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
+          <p class="text-center">Congratulations on completing the quiz!</p>
+          <div>
+          <a id="playAgainButton" href="quiz.html" class="btn btn-primary my-3">Play Again</a>
+          <a id="homeButton" href="index.html" class="btn btn-primary my-3">Back to Homepage</a>
+        </div>
+        </div>
       </div>
-  `
+    </div>
+  `;
   quizContainer.innerHTML = html;
 }
 
 function updateQuestion() {
   const currentQuestion = getCurrentQuestion();
-  const questionElement = document.querySelector("#question");
-  questionElement.textContent = currentQuestion.question;
 
-  const existingAnswers = document.querySelector("#answers");
-  if (existingAnswers) {
-    existingAnswers.remove();
+  // Update the question text
+  const questionContainer = document.getElementById("quizContainer");
+  if (!questionContainer) {
+    console.error("Question container not found");
+    return;
   }
 
-  const answersContainer = document.createElement("div");
-  answersContainer.id = "answers";
-  answersContainer.className = "row";
+  questionContainer.innerHTML = `
+    <h1 id="question" class="my-3">${currentQuestion.question}</h1>
+    <div id="answers" class="row"></div>
+  `;
 
-  let answers = [];
-  if (currentQuestion.type === "boolean") {
-    answers = ["True", "False"];
-  } else if (currentQuestion.type === "multiple") {
-    answers = [
-      currentQuestion.correctAnswer,
-      ...currentQuestion.incorrectAnswers,
-    ];
-    answers.sort(() => Math.random() - 0.5);
-  }
+  const answersContainer = document.getElementById("answers");
+
+  let answers =
+    currentQuestion.type === "boolean"
+      ? ["True", "False"]
+      : [
+          currentQuestion.correctAnswer,
+          ...currentQuestion.incorrectAnswers,
+        ].sort(() => 0.5 - Math.random());
 
   answers.forEach((answer) => {
     const answerCol = document.createElement("div");
     answerCol.className = "col-md-6 mb-3";
-
     const answerButton = document.createElement("button");
     answerButton.className = "btn btn-info w-100";
     answerButton.textContent = answer;
-    answerButton.onclick =
-      currentQuestion.type === "multiple"
-        ? () => handleAnswer(answer === currentQuestion.correctAnswer)
-        : () =>
-            handleAnswer(
-              answer.toLowerCase() ===
-                currentQuestion.correctAnswer.toString().toLowerCase()
-            );
+    answerButton.onclick = () =>
+      handleAnswer(answer === currentQuestion.correctAnswer);
     answerCol.appendChild(answerButton);
     answersContainer.appendChild(answerCol);
   });
 
-  const quizContainer = document.querySelector("#quizContainer");
-  quizContainer.appendChild(answersContainer);
   const betInput = document.querySelector("#betInput");
-  const betValueDisplay = document.querySelector("#betValueDisplay");
+  const betContainer = document.querySelector("#betContainer");
   betInput.disabled = false;
-  betInput.value = 0;
-  betValueDisplay.textContent = "0";
+  betContainer.style.display = "initial";
+
   resetProgressBar();
   startTimer();
 }
@@ -182,35 +221,26 @@ function updateBetInputConstraints() {
   totalPointsDisplay.textContent = quizState.points;
 }
 
-// initial ui
-document.querySelector("#quiz").innerHTML = `
-
-  <div id="quizContainer" class="container">
-    <h1 id="question" class="my-3">Loading...</h1>
-  </div>
-  <div class="my-3 col-md-4" >
-    <div class="mb-2">
-        <strong>Total Points: </strong><span id="totalPointsDisplay"></span>
-    </div>
-    <div class="mb-2">
-</div>
-<label for="betInput" class="form-label">Place Your Bet:</label>
-<input type="range" id="betInput" class="form-range" min="0" max="100" step="1" value="0">
-
-<span id="betValueDisplay">0</span>
-</div>
-<div id="nextButtonContainer"></div>
-`;
+document.querySelector("#quiz").innerHTML = initialHtml;
 
 function displayGameOverMessage() {
   const quizContainer = document.querySelector("#quiz");
   const html = `
-  <div class="start-screen">
-        <img src="assets/images/crash.png" alt="Quiz Rules" class="img-fluid">
-        <a id="startButton" href="quiz.html" class="btn btn-primary my-3">Play Again</a>
-        <a id="startButton" href="index.html" class="btn btn-primary my-3">Back to Home</a>
-  </div>
-  `
+    <div class="container animate__animated animate__fadeIn">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="assets/images/crash.png" alt="Quiz Rules" class="img-fluid">
+        </div>
+        <div class="col-md-6 d-flex flex-column justify-content-center">
+          <p class="text-center">Game Over</p>
+          <div>
+          <a id="startButton" href="quiz.html" class="btn btn-primary my-3">Play Again</a>
+          <a href="index.html" class="btn btn-primary my-3">Back to Home</a>
+</div>
+        </div>
+      </div>
+    </div>
+  `;
   quizContainer.innerHTML = html;
 }
 
