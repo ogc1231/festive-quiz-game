@@ -14,7 +14,7 @@ export function getQuestions() {
 }
 
 async function fetchTriviaQuestions() {
-  const queryParams = { amount: 12, type: 'boolean' };
+  const queryParams = { amount: 12 };
   const queryString = Object.keys(queryParams)
     .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(queryParams[key])}`)
     .join("&");
