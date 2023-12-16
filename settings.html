@@ -69,6 +69,62 @@
           </div>
         </div>
       </nav>
+      
+      <!-- Form -->
+      <form class="container" id="settings-form">
+        <div>
+          <h3>Difficulty Level:</h3>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions"  value="mixed" id="difficulty-level" checked="" required>
+            <label class="form-check-label" for="inlineRadio1">Mixed - Default</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" value="easy">
+            <label class="form-check-label" for="inlineRadio2">Easy</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions"  value="medium">
+            <label class="form-check-label" for="inlineRadio3">Medium</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions"  value="hard">
+            <label class="form-check-label" for="inlineRadio3">Hard</label>
+          </div>
+        </div>
+
+        <div>
+          <h3>Question Type:</h3>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="question-type" value="mixed" checked="" required>
+            <label class="form-check-label" for="inlineRadio21">Mixed - Default</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions2" value="mutiple-choice-only">
+            <label class="form-check-label" for="inlineRadio22">Mutiple Choice Only</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions2" value="true-or-false-only">
+            <label class="form-check-label" for="inlineRadio23">True or False Only</label>
+          </div>
+        </div>
+
+        <div>
+          <h3>Number of Questions:</h3>
+          <select class="bootstrap-select" name="optionChoice" id="number-of-questions">
+            <option value="12" checked=""  >12 - Default</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+          </select>
+        </div>
+
+        <div>
+          <button id="save-set-btn" type="submit" value="submit">Save Settings</button>
+          <button id="reset-btn" type="reset" value="reset">Reset Default</button>
+        </div>
+      </form>
+      
 
     <script src="assets/scripts/script.js"></script>
 
