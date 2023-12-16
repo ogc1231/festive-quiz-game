@@ -16,10 +16,15 @@ export function getQuestions() {
 async function fetchTriviaQuestions() {
   const queryParams = { amount: 12 };
   const queryString = Object.keys(queryParams)
-    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(queryParams[key])}`)
+    .map(
+      (key) =>
+        `${encodeURIComponent(key)}=${encodeURIComponent(queryParams[key])}`
+    )
     .join("&");
 
-  const response = await fetch(`https://trivia-api-fe683df325a4.herokuapp.com/trivia?${queryString}`);
+  const response = await fetch(
+    `https://trivia-api-fe683df325a4.herokuapp.com/trivia?${queryString}`
+  );
   const data = await response.json();
 
   if (data) {
@@ -29,10 +34,10 @@ async function fetchTriviaQuestions() {
         type: q.type,
         correctAnswer: q.correct_answer,
         incorrectAnswers: q.incorrect_answers || [],
-        imageUrl: `/assets/images/day${index + 1}` 
+        imageUrl: `/assets/images/day${index + 1}.png`,
       };
     });
-    console.log(questions)
+    console.log(questions);
   } else {
     throw new Error("No data received");
   }
@@ -40,4 +45,13 @@ async function fetchTriviaQuestions() {
 
 export async function initializeQuiz() {
   await fetchTriviaQuestions();
+}
+
+export function resetProgressBar() {
+  const progressBar = document.querySelector("#timerProgress");
+  if (progressBar) {
+    progressBar.classList.remove("progress-bar-animate");
+    void progressBar.offsetWidth; // force reflow/repaint
+    progressBar.style.width = "100%";
+  }
 }

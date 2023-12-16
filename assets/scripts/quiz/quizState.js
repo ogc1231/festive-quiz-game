@@ -2,7 +2,7 @@ export const quizState = {
   points: 100,
   currentQuestionIndex: 0,
   userBet: 0,
-  gameState: "started", // Possible values: 'notStarted', 'ongoing', 'completed' ?
+  gameState: "started",
 };
 
 export function updateUserPoints(points) {
