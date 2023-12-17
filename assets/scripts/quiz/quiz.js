@@ -167,10 +167,11 @@ function onComplete() {
         <div class="col-md-6">
           <img src="assets/images/12Days.png" alt="Quiz Rules" class="img-fluid">
         </div>
-        <div class="col-md-6 d-flex flex-column justify-content-between">
-          <div>
-            <h2>Congratulations on completing the quiz!</h2>
-            <div id="verseContainer" class="animate__animated text-center content-fixed-height"></div>
+        <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
+          <div">
+            <h2 class="h2">Congratulations!</h2>
+            <h2 class="h4">Score:</h2>
+            <div id="verseContainer" class="animate__animated text-center content-fixed-height h4 d-flex justify-content-center align-items-center"></div>
             <div class="button-group">
               <a id="playAgainButton" href="quiz.html" class="btn btn-primary my-3">Play Again</a>
               <a id="homeButton" href="index.html" class="btn btn-primary my-3">Back to Homepage</a>
@@ -286,7 +287,7 @@ function displayGameOverMessage() {
           <img src="assets/images/crash.png" alt="Quiz Rules" class="img-fluid">
         </div>
         <div class="col-md-6 d-flex flex-column justify-content-center">
-          <p class="text-center">Game Over</p>
+          <h3 class="text-center h2">Game Over</h3>
           <div>
           <a id="startButton" href="quiz.html" class="btn btn-primary my-3">Play Again</a>
           <a href="index.html" class="btn btn-primary my-3">Back to Home</a>

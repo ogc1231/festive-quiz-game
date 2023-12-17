@@ -3,6 +3,7 @@ document
   .getElementById("settings-form")
   .addEventListener("submit", function (event) {
     event.preventDefault();
+    localStorage.clear();
 
     let difficultyLevel = document.querySelector(
       'input[name="inlineRadioOptions"]:checked'
