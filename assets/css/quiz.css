@@ -49,3 +49,13 @@
 .progress-bar-animate {
   animation: countdown 20s linear;
 }
+
+#quiz {
+  margin-top: 70px;
+}
+
+#verseContainer {
+  height: 200px;
+  overflow: hidden;
+  margin-top: 30px;
+}
