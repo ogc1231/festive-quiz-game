@@ -97,3 +97,8 @@ p {
 nav {
   padding-bottom: 70px;
 }
+
+/* overriding styles of quiz buttons here as bootstrap classes not being applied  */
+.next-finish-button, .progress-bar {
+  background-color: var(--clr-primary-2)!important;
+}
