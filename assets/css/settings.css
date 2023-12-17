@@ -1,0 +1,77 @@
+/* General Styles */
+
+.container {
+    color: var(--clr-black);
+    top: 50px;
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(../images/settings.png) center/cover no-repeat;;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  h3 {
+    color: var(--clr-secondary-1);
+    margin-bottom: 15px;
+  }
+  
+  /* Form Check Styles */
+  .form-check {
+    margin-bottom: 1em;
+  }
+  
+  .form-check-inline {
+    display: flex;
+    align-items: center;
+    margin-right: 2em;
+    color: var(--clr-secondary-2);
+  }
+  
+  .form-check-input {
+    margin-right: 0.5em;
+  }
+  
+  .form-check-label {
+    margin: 0;
+    font-weight: 500;
+  }
+  
+  /* Button Styles */
+ .btn-save {
+    color: var(--clr-white);
+    background-color: var(--clr-primary-2);
+  }
+  
+.btn-save:hover {
+    color: var(--clr-primary-2);
+    background-color: transparent;
+}
+
+.btn-reset {
+    color: var(--clr-white);
+    background-color: var(--clr-primary-1);
+}
+
+.btn-reset:hover {
+    color: var(--clr-primary-1);
+    background-color: transparent;
+}
+
+@media screen and (min-width: 769px) {
+    .container {
+        max-width: 1000px;
+    }
+    .container h3 {
+        font-size: 3em;
+    }
+    .form-check-label {
+        font-size: 2rem;
+    }
+    .btn {
+        font-size: 2rem;
+        margin: 1em;
+    }
+}
