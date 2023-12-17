@@ -1,22 +1,17 @@
-// Save settings to localstorage
-document
-  .getElementById("settings-form")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
+// Save settings to local storage
+const saveBtn = document.getElementById("save-set-btn");
 
-    let difficultyLevel = document.querySelector(
-      'input[name="inlineRadioOptions"]:checked'
-    ).value;
-    let questionType = document.querySelector(
-      'input[name="inlineRadioOptions2"]:checked'
-    ).value;
-    const formData = {
-      difficultyLevel: difficultyLevel,
-      questionType: questionType,
-    };
+saveBtn.addEventListener("click", function () {
+  let difficultyLevel = document.querySelector('input[name="inlineRadioOptions"]:checked').value;
+  let questionType = document.querySelector('input[name="inlineRadioOptions2"]:checked').value;
+  const formData = {
+    difficultyLevel: difficultyLevel,
+    questionType: questionType,
+  };
 
-    saveFormData(formData);
-  });
+  saveFormData(formData);
+  showNotification(); // Show notification after saving
+});
 
 function saveFormData(formData) {
   const storedFormData = JSON.parse(localStorage.getItem("formData")) || [];
@@ -26,7 +21,12 @@ function saveFormData(formData) {
   localStorage.setItem("formData", JSON.stringify(storedFormData));
 }
 
-// Clear localstorage
+// Function to show notification (alert in this case)
+function showNotification() {
+  alert("Settings have been saved!"); // You can customize this notification
+}
+
+// Clear local storage
 const resetBtn = document.getElementById("reset-btn");
 
 resetBtn.addEventListener("click", function () {
