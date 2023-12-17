@@ -39,6 +39,9 @@ Welcome to the Christmas Quiz Game! This game is designed to test your knowledge
 - Scores and leaderboard to track performance.
 - Levels or difficulty settings for different player experiences.
 
+## Quiz
+The Trivia Quiz Game's logic is structured across multiple JavaScript modules. In utils.js, it initializes game settings like difficulty, question type, and scoring parameters, leveraging localStorage to retain user preferences. The quiz dynamically fetches questions and updates the game state, including handling timers and scoring. quiz.js manages UI interactions, displaying questions and handling user responses, including time-based scoring and progress through the quiz. quizState.js tracks the user's progress and score, contributing to a responsive and interactive quiz experience. This modular approach ensures clean separation of concerns and enhances maintainability.
+
 ## How to Play
 
 1. **Starting the Game**
