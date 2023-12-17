@@ -192,7 +192,7 @@ async function onComplete() {
     <div class="container animate__animated animate__fadeIn">
       <div class="row mx-auto border border-danger border-3 rounded-4">
         <div class="col-md-6">
-          <img src="assets/images/12Days.png" alt="Quiz Rules" class="img-fluid">
+          <img src="../../assets/images/12Days.png" alt="Quiz Rules" class="img-fluid">
         </div>
         <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
           <div">
@@ -200,8 +200,8 @@ async function onComplete() {
             <h2 class="h4">Score: ${quizState.points}</h2>
             <div id="verseContainer" class="animate__animated text-center content-fixed-height h4 d-flex justify-content-center align-items-center"></div>
             <div class="button-group">
-              <a id="playAgainButton" href="quiz.html" class="btn btn-success my-3">Play Again</a>
-              <a id="homeButton" href="index.html" class="btn btn-danger my-3">Back to Homepage</a>
+              <a id="playAgainButton" href="/quiz" class="btn btn-success my-3">Play Again</a>
+              <a id="homeButton" href="/home" class="btn btn-danger my-3">Back to Homepage</a>
             </div>
           </div>
         </div>
@@ -344,13 +344,13 @@ function displayGameOverMessage() {
     <div class="container animate__animated animate__fadeIn">
       <div class="row mx-auto border border-danger border-3 rounded-4">
         <div class="col-md-6">
-          <img src="assets/images/crash.png" alt="Quiz Rules" class="img-fluid">
+          <img src="../../assets/images/crash.png" alt="Quiz Rules" class="img-fluid">
         </div>
         <div class="col-md-6 d-flex flex-column justify-content-center">
           <h3 class="text-center h2 fw-bold ">Game Over!</h3>
           <div>
-          <a id="startButton" href="quiz.html" class="btn btn-success my-3">Play Again</a>
-          <a href="index.html" class="btn btn-danger my-3">Back to Home</a>
+          <a id="startButton" href="/quiz" class="btn btn-success my-3">Play Again</a>
+          <a href="/home" class="btn btn-danger my-3">Back to Home</a>
 </div>
         </div>
       </div>

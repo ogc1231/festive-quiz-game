@@ -102,7 +102,7 @@ export function calcTimeOutPenalty(difficulty, index) {
 }
 
 async function fetchTriviaQuestions() {
-  const queryParams = { amount: 12 };
+  const queryParams = questionType === 'mixed' ? { amount: 12 } : {amount: 12, type: questionType};
   const queryString = Object.keys(queryParams)
     .map(
       (key) =>
@@ -123,7 +123,7 @@ async function fetchTriviaQuestions() {
         correctAnswer: q.correct_answer,
         incorrectAnswers: q.incorrect_answers || [],
         trivia: q.interesting_fact,
-        imageUrl: `assets/images/day${index + 1}.png`,
+        imageUrl: `../../assets/images/day${index + 1}.png`,
       };
     });
   } else {
