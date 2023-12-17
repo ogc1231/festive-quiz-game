@@ -10,6 +10,7 @@ header {
   min-height: 100vh;
   background: linear-gradient(rgba(255, 0, 0, 0.455), rgba(0, 128, 0, 0.455)),
     url(../images/hero.png) center/cover no-repeat;
+    background-attachment: fixed;
 }
 
 .banner {
@@ -237,4 +238,22 @@ figure.effect-team:hover {
 
 .body-fixed {
   overflow: hidden;
+}
+
+/* media quaries */
+@media screen and (min-width: 769px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  .btn-play {
+    padding: 0.375rem 0.75rem;
+    font-size: 2rem;
+    border: 1px solid var(--clr-secondary-1);
+  }
 }
