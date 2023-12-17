@@ -35,10 +35,9 @@ async function fetchTriviaQuestions() {
         correctAnswer: q.correct_answer,
         incorrectAnswers: q.incorrect_answers || [],
         trivia: q.interesting_fact,
-        imageUrl: `/assets/images/day${index + 1}.png`,
+        imageUrl: `assets/images/day${index + 1}.png`,
       };
     });
-    console.log(questions);
   } else {
     throw new Error("No data received");
   }

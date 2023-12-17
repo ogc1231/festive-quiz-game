@@ -144,6 +144,21 @@ function finishQuiz() {
   onComplete();
 }
 
+const twelveDaysOfChristmas = [
+  "On the first day of Christmas, my true love sent to me: A Partridge in a Pear Tree.",
+  "On the second day of Christmas, my true love sent to me: Two Turtle Doves and a Partridge in a Pear Tree.",
+  "On the third day of Christmas, my true love sent to me: Three French Hens, Two Turtle Doves, and a Partridge in a Pear Tree.",
+  "On the fourth day of Christmas, my true love sent to me: Four Calling Birds, Three French Hens, Two Turtle Doves, and a Partridge in a Pear Tree.",
+  "On the fifth day of Christmas, my true love sent to me: Five Golden Rings, Four Calling Birds, Three French Hens, Two Turtle Doves, and a Partridge in a Pear Tree.",
+  "On the sixth day of Christmas, my true love sent to me: Six Geese a Laying, Five Golden Rings, Four Calling Birds, Three French Hens, Two Turtle Doves, and a Partridge in a Pear Tree.",
+  "On the seventh day of Christmas, my true love sent to me: Seven Swans a Swimming, Six Geese a Laying, Five Golden Rings, Four Calling Birds, Three French Hens, Two Turtle Doves, and a Partridge in a Pear Tree.",
+  "On the eighth day of Christmas, my true love sent to me: Eight Maids a Milking, Seven Swans a Swimming, Six Geese a Laying, Five Golden Rings, Four Calling Birds, Three French Hens, Two Turtle Doves, and a Partridge in a Pear Tree.",
+  "On the ninth day of Christmas, my true love sent to me: Nine ladies dancing, Eight Maids a Milking, Seven Swans a Swimming, Six Geese a Laying, Five Golden Rings, Four Calling Birds, Three French Hens, Two Turtle Doves, and a Partridge in a Pear Tree.",
+  "On the tenth day of Christmas, my true love sent to me: Ten lords a-leaping, Nine ladies dancing, Eight Maids a Milking, Seven Swans a Swimming, Six Geese a Laying, Five Golden Rings, Four Calling Birds, Three French Hens, Two Turtle Doves, and a Partridge in a Pear Tree.",
+  "On the eleventh day of Christmas, my true love sent to me: Eleven pipers piping, Ten lords a-leaping, Nine ladies dancing, Eight Maids a Milking, Seven Swans a Swimming, Six Geese a Laying, Five Golden Rings, Four Calling Birds, Three French Hens, Two Turtle Doves, and a Partridge in a Pear Tree.",
+  "On the twelfth day of Christmas, my true love sent to me: 12 Drummers Drumming, 11 Pipers Piping, 10 Lords a Leaping, 9 Ladies Dancing, 8 Maids a Milking, 7 Swans a Swimming, 6 Geese a Laying, 5 Golden Rings, 4 Calling Birds, 3 French Hens, 2 Turtle Doves, and a Partridge in a Pear Tree.",
+];
+
 function onComplete() {
   const quizContainer = document.querySelector("#quiz");
   const html = `
@@ -152,23 +167,53 @@ function onComplete() {
         <div class="col-md-6">
           <img src="assets/images/12Days.png" alt="Quiz Rules" class="img-fluid">
         </div>
-        <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
-          <p class="text-center">Congratulations on completing the quiz!</p>
+        <div class="col-md-6 d-flex flex-column justify-content-between">
           <div>
-          <a id="playAgainButton" href="quiz.html" class="btn btn-primary my-3">Play Again</a>
-          <a id="homeButton" href="index.html" class="btn btn-primary my-3">Back to Homepage</a>
-        </div>
+            <h2>Congratulations on completing the quiz!</h2>
+            <div id="verseContainer" class="animate__animated text-center content-fixed-height"></div>
+            <div class="button-group">
+              <a id="playAgainButton" href="quiz.html" class="btn btn-primary my-3">Play Again</a>
+              <a id="homeButton" href="index.html" class="btn btn-primary my-3">Back to Homepage</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   `;
   quizContainer.innerHTML = html;
+  displayVerses();
+  // Display the first verse immediately
+  displayNextVerse();
+}
+
+function displayVerses() {
+  const verseContainer = document.getElementById("verseContainer");
+  let currentVerse = 0;
+
+  const displayNextVerse = () => {
+    verseContainer.textContent = twelveDaysOfChristmas[currentVerse];
+    currentVerse = (currentVerse + 1) % twelveDaysOfChristmas.length;
+  };
+
+  displayNextVerse();
+
+  const updateVerse = () => {
+    verseContainer.classList.remove("animate__fadeIn");
+    verseContainer.classList.add("animate__fadeOut");
+
+    setTimeout(() => {
+      displayNextVerse();
+      verseContainer.classList.remove("animate__fadeOut");
+      verseContainer.classList.add("animate__fadeIn");
+    }, 1000);
+  };
+
+  setInterval(updateVerse, 8000);
 }
 
 function updateQuestion() {
   const currentQuestion = getCurrentQuestion();
 
-  // Update the question text
   const questionContainer = document.getElementById("quizContainer");
   if (!questionContainer) {
     console.error("Question container not found");
