@@ -232,3 +232,21 @@ figure.effect-team:hover {
   text-decoration: none;
   cursor: pointer;
 }
+
+/* media quaries */
+@media screen and (min-width: 769px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  .btn-play {
+    padding: 0.375rem 0.75rem;
+    font-size: 2rem;
+    border: 1px solid var(--clr-secondary-1);
+  }
+}
