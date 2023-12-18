@@ -37,12 +37,13 @@ resetBtn.addEventListener("click", function () {
 // Save state of settings
 localStorage.getItem('formData')
 
-const formData = JSON.parse(localStorage.getItem('formData'));
+const formData1 = JSON.parse(localStorage.getItem('formData'));
+const formData2 = JSON.parse(localStorage.getItem('formData'));
 
-if (formData.difficultyLevel) {
-  document.querySelector(`input[name="inlineRadioOptions"][value="${formData.difficultyLevel}"]`).checked = true;
+if (formData1.difficultyLevel) {
+  document.querySelector(`input[name="inlineRadioOptions"][value="${formData1.difficultyLevel}"]`).checked = true;
 }
 
-if (formData.questionType) {
-  document.querySelector(`input[name="inlineRadioOptions2"][value="${formData.questionType}"]`).checked = true;
+if (formData2.questionType) {
+  document.querySelector(`input[name="inlineRadioOptions2"][value="${formData2.questionType}"]`).checked = true;
 }
