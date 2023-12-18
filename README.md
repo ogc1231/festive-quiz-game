@@ -24,7 +24,7 @@
 
 # Christmas Quiz Game
 
-![Game Screenshot/Logo]
+![screenshot](https://github.com/ogc1231/festive-quiz-game/blob/main/documentation/readme/quiz-game-responsiveness.png)
 
 ## Description
 
