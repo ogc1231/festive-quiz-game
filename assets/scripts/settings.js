@@ -33,3 +33,20 @@ resetBtn.addEventListener("click", function () {
   alert('settings updated');
 
 });
+
+// Save state of settings
+document.addEventListener('DOMContentLoaded', function() {
+
+  localStorage.getItem('formData')
+
+  const formData1 = JSON.parse(localStorage.getItem('formData'));
+  const formData2 = JSON.parse(localStorage.getItem('formData'));
+
+  if (formData1.difficultyLevel) {
+  document.querySelector(`input[name="inlineRadioOptions"][value="${formData1.difficultyLevel}"]`).checked = true;
+  }
+
+  if (formData2.questionType) {
+  document.querySelector(`input[name="inlineRadioOptions2"][value="${formData2.questionType}"]`).checked = true;
+  }
+});
