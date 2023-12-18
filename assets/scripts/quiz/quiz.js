@@ -78,8 +78,8 @@ function handleAnswer(isCorrect, isTimeout = false) {
   if (difficulty === "easy") {
     if (timeLeft > 10000) multiplier = 1.5; // More than 10 seconds
   } else if (difficulty === "medium") {
-    if (timeLeft > 9000) multiplier = 2; // More than 9 seconds
-    else if (timeLeft > 5000) multiplier = 1.8; // More than 5 seconds
+    if (timeLeft > 9000) multiplier = 1.8; // More than 9 seconds
+    else if (timeLeft > 5000) multiplier = 1.5; // More than 5 seconds
   } else if (difficulty === "hard") {
     if (timeLeft > 6000) multiplier = 2; // More than 6 seconds
     else if (timeLeft > 4000) multiplier = 1.5; // More than 4 seconds
