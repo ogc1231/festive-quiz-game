@@ -107,6 +107,13 @@ The quiz difficulty impacts the quiz's dynamics, such as the time available to a
 ## Testing
 [TESTING.md](TESTING.md) file.
 
+## User Stories
+- Create settingspage - As a user I can view the quiz settings page, so that I can adjust the settings to suit my needs.
+- Create homepage - As a user I can view a homepage, so that I can learn about the purpose of the website.
+- Create navbar - As a user I can view a navbar from every page, so that I can navigate easily between pages.
+- Create quizpage - As a user I can interact with the quiz, so that I can answer the questions.
+- Create settings form - As a user I can adjust the quiz game settings, so that I can experience different question difficulties and types.
+
 
 ## Requirements
 - Web browser (Chrome, Firefox, Safari, etc.)
