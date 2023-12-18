@@ -104,6 +104,10 @@ The quiz difficulty impacts the quiz's dynamics, such as the time available to a
 - Expanding Trivia Functionality: Although the quiz is themed around the '12 Days of Christmas', the trivia API supports fetching more questions. Implementing a feature to utilize this capability can add variety and depth to the quiz experience.
 
 
+## Testing
+[TESTING.md](TESTING.md) file.
+
+
 ## Requirements
 - Web browser (Chrome, Firefox, Safari, etc.)
 
