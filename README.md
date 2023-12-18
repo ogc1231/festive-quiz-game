@@ -54,6 +54,12 @@ The quiz dynamically fetches questions and updates the game state, including han
 
 quizState.js tracks the user's progress and score, contributing to a responsive and interactive quiz experience. This modular approach ensures clean separation of concerns and enhances maintainability.
 
+
+![screenshot](https://github.com/ogc1231/festive-quiz-game/blob/main/documentation/readme/question.png)
+
+![screenshot](https://github.com/ogc1231/festive-quiz-game/blob/main/documentation/readme/trivia.png)
+
+
 ## Settings
 The settings page allows users to customize their quiz experience by selecting their preferred difficulty level and question type. Changes to these settings impact the quiz's dynamics, such as the time available to answer questions, starting points, and penalties for timeouts. 
 
