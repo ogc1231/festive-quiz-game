@@ -201,7 +201,7 @@ async function onComplete() {
             <div id="verseContainer" class="animate__animated text-center content-fixed-height h4 d-flex justify-content-center align-items-center"></div>
             <div class="button-group">
               <a id="playAgainButton" href="quiz.html" class="btn btn-success my-3">Play Again</a>
-              <a id="homeButton" href="/index.html" class="btn btn-danger my-3">Back to Homepage</a>
+              <a id="homeButton" href="index.html" class="btn btn-danger my-3">Back to Homepage</a>
             </div>
           </div>
         </div>
@@ -350,7 +350,7 @@ function displayGameOverMessage() {
           <h3 class="text-center h2 fw-bold ">Game Over!</h3>
           <div>
           <a id="startButton" href="quiz.html" class="btn btn-success my-3">Play Again</a>
-          <a href="/index.html" class="btn btn-danger my-3">Back to Home</a>
+          <a href="index.html" class="btn btn-danger my-3">Back to Home</a>
 </div>
         </div>
       </div>
