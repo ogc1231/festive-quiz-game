@@ -9,21 +9,21 @@ Code was tested for errors using a range of validation tool shown below.
 
 | Page | Screenshot | Notes |
 | --- | --- | --- | --- |
-| Home | ![screenshot](screenshot link) | No warnings or errors |
+| Home | ![screenshot](screenshot link) | No warnings or errors | ![](assets/images/index.png)
 
 ### CSS
 The recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) was used to validate the CSS file.
 
 | File | Screenshot | Notes |
 | --- | --- | --- | --- |
-| style.css | ![screenshot](screenshot link) | No warnings or errors |
+| style.css | ![screenshot](screenshot link) | No warnings or errors | ![](assets/images/css.png)
 
 ### JavaScript
 The recommended [JShint Validator](https://jshint.com) was used to validate the JS file.
 
 | File | Screenshot | Notes |
 | --- | --- | --- |
-| script.js | ![screenshot](screenshot link) | No errors or warnings |
+| script.js | ![screenshot](screenshot link) | No errors or warnings | ![](assets/images/scriptjs.png)
 
 ## Browser Compatibility
 Webpage tested on multiple browsers to check for compatibility issues. All worked as expected.
@@ -42,14 +42,14 @@ Webpage tested on multiple devices to check for compatibility issues. All worked
 | Phone (DevTools) | ![screenshot](screenshot link) | Works as expected |
 | Tablet (DevTools) | ![screenshot](screenshot link) | Works as expected |
 | Laptop | ![screenshot](screenshot link) | Works as expected |
-| Desktop | ![screenshot](screenshot link) | Works as expected |
+| Desktop | ![screenshot](screenshot link) | Works as expected | ![](assets/scripts/responsive.png)
 
 ## Lighthouse Audit
 Project tested using the Lighthouse Audit tool to check for any major issues.
 
 | Page | Size | Screenshot | Notes |
 | --- | --- | --- | --- |
-| Home | Mobile | ![screenshot](screenshot link) | No major issues |
+| Home | Mobile | ![screenshot](screenshot link) | No major issues | ![](assets/images/lighthouse.png)
 | Home | Desktop | ![screenshot](screenshot link) | No major issues |
 
 ## User Story Testing

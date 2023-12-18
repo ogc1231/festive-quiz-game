@@ -1,5 +1,7 @@
+import { getStartingPoints } from "./utils.js";
+
 export const quizState = {
-  points: 100,
+  points: getStartingPoints(),
   currentQuestionIndex: 0,
   userBet: 0,
   gameState: "started",
@@ -14,7 +16,9 @@ export function updateUserBet(bet) {
 }
 
 export function updateQuestionIndex() {
+  console.log(quizState.currentQuestionIndex);
   quizState.currentQuestionIndex++;
+  console.log(quizState.currentQuestionIndex);
 }
 
 export function updateGameState(state) {

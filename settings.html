@@ -18,7 +18,7 @@
     <!-- Favicon -->
     <link
       rel="shortcut icon"
-      href="assets/images/favicon-snowman.png"
+      href="./assets/images/favicon-snowman.png"
       type="image/x-icon"
     />
     <!-- Font Awesome -->
@@ -48,7 +48,8 @@
       crossorigin="anonymous"
     ></script>
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/global.css" />
+    <link rel="stylesheet" href="./assets/css/global.css" />
+    <link rel="stylesheet" href="./assets/css/settings.css" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -73,7 +74,7 @@
           </div>
 =======
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Quiz Game</a>
+        <a class="navbar-brand" href="index.html">Festive Quiz</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -97,6 +98,9 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="settings.html">Settings</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="leaderboard.html">Leaderboard</a>
             </li>
           </ul>
 >>>>>>> 179338c93a4b47b17573f6b44fde080672358deb
@@ -172,7 +176,7 @@
             class="form-check-input"
             type="radio"
             name="inlineRadioOptions2"
-            value="mutiple-choice-only"
+            value="multiple"
           />
           <label class="form-check-label" for="inlineRadio22"
             >Mutiple Choice Only</label
@@ -183,7 +187,7 @@
             class="form-check-input"
             type="radio"
             name="inlineRadioOptions2"
-            value="true-or-false-only"
+            value="boolean"
           />
           <label class="form-check-label" for="inlineRadio23"
             >True or False Only</label
@@ -192,16 +196,28 @@
       </div>
 
       <div>
-        <button id="save-set-btn" type="submit" value="submit">
+        <button
+          class="btn btn-save"
+          id="save-set-btn"
+          type="submit"
+          value="submit"
+        >
           Save Settings
         </button>
-        <button id="reset-btn" type="reset" value="reset">Reset Default</button>
+        <button class="btn btn-reset" id="reset-btn" type="reset" value="reset">
+          Reset Default
+        </button>
       </div>
     </form>
 
+<<<<<<< HEAD
     <script src="assets/scripts/script.js"></script>
     <script src="assets/scripts/settings.js"></script>
     <script src="assets/scripts/quiz.js"></script>
     <script src="assets/scripts/utils.js"></script>
+=======
+    <script src="./assets/scripts/script.js"></script>
+    <script src="./assets/scripts/settings.js"></script>
+>>>>>>> 64b53ae154d93bc544bae81b7d5010fc76cb94c2
   </body>
 </html>

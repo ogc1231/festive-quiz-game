@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+<<<<<<< HEAD
 body {
     margin: 0 auto;
     text-align: center;
@@ -15,6 +16,14 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: aquamarine;
+=======
+/* hero */
+header {
+  min-height: 100vh;
+  background: linear-gradient(rgba(255, 0, 0, 0.455), rgba(0, 128, 0, 0.455)),
+    url(../images/hero.png) center/cover no-repeat;
+    background-attachment: fixed;
+>>>>>>> 64b53ae154d93bc544bae81b7d5010fc76cb94c2
 }
 
 .credit {
@@ -236,4 +245,25 @@ figure.effect-team:hover {
 .body-fixed {
   overflow: hidden;
 }
+<<<<<<< HEAD
 >>>>>>> 179338c93a4b47b17573f6b44fde080672358deb
+=======
+
+/* media quaries */
+@media screen and (min-width: 769px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  .btn-play {
+    padding: 0.375rem 0.75rem;
+    font-size: 2rem;
+    border: 1px solid var(--clr-secondary-1);
+  }
+}
+>>>>>>> 64b53ae154d93bc544bae81b7d5010fc76cb94c2

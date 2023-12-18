@@ -18,7 +18,7 @@
     <!-- Favicon -->
     <link
       rel="shortcut icon"
-      href="./assets/images/favicon-snowman.png"
+      href="..assets/images/favicon-snowman.png"
       type="image/x-icon"
     />
     <!-- Font Awesome -->
@@ -50,6 +50,10 @@
     <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/global.css" />
     <link rel="stylesheet" href="./assets/css/quiz.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -69,12 +73,12 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="index.html"
+              <a class="nav-link active" aria-current="page" href="index.html"
                 >Home</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="quiz.html">Quiz</a>
+              <a class="nav-link" href="quiz.html">Quiz</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="settings.html">Settings</a>
@@ -87,53 +91,21 @@
       </div>
     </nav>
 
-    <div class="container my-5 mx-auto border border-danger border-3 rounded-4">
-      <div class="row align-items-center">
-        <!-- Image Column -->
-        <div class="col-md-6">
-          <img
-            src="./assets/images/elfRules.png"
-            alt="Quiz Rules"
-            class="img-fluid"
-          />
-        </div>
-
-        <!-- Text and Button Column -->
-        <div class="col-md-6 d-flex flex-column align-items-center">
-          <h2 class="pt-4">
-            Answer 12 questions with a festive twist, one for each day of
-            Christmas.
-          </h2>
-
-          <ul class="custom-list">
-            <li>You start with <span id="points">100</span> points.</li>
-            <li>
-              When a new question loads, you have
-              <span id="time">12</span> seconds to answer.
-            </li>
-            <li>Use the bet slider to place a bet.</li>
-            <li>
-              If your answer is incorrect, you will lose the points you bet.
-            </li>
-            <li>
-              If your answer is correct, you will gain the points you bet.
-            </li>
-            <li>If you answer faster, you might get bonus points.</li>
-            <li>If you you loose all your points, the game will end.</li>
-            <li>Good luck!!!</li>
-          </ul>
-
-          <a
-            id="startButton"
-            href="quiz-start.html"
-            class="btn btn-success my-3 btn-lg mb-4"
-            >Start Quiz</a
-          >
-        </div>
-      </div>
+    <div class="container mt-5 col-md-6">
+      <h3 class="h3 bold font-weight-bold">Leaderboard</h3>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Score</th>
+          </tr>
+        </thead>
+        <tbody id="leaderboardTableBody"></tbody>
+      </table>
     </div>
 
     <script src="./assets/scripts/script.js"></script>
-    <script src="./assets/scripts/quiz/quizRules.js"></script>
+    <script type="module" src="./assets/scripts/leaderBoard.js"></script>
   </body>
 </html>

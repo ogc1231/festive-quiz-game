@@ -108,4 +108,12 @@ p {
 nav {
   padding-bottom: 70px;
 }
+<<<<<<< HEAD
 >>>>>>> 179338c93a4b47b17573f6b44fde080672358deb
+=======
+
+/* overriding styles of quiz buttons here as bootstrap classes not being applied  */
+.next-finish-button, .progress-bar {
+  background-color: var(--clr-primary-2)!important;
+}
+>>>>>>> 64b53ae154d93bc544bae81b7d5010fc76cb94c2
