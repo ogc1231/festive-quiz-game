@@ -164,5 +164,5 @@ The quiz difficulty impacts the quiz's dynamics, such as the time available to a
 
 ## Screenshots/Demo
 
-![Screenshot 1]
-![Screenshot 2]
+![screenshot](assets/images/screenshot-festive-quiz-game.png)
+![screenshot](assets/images/screenshot2-festive-quiz-game.png)
