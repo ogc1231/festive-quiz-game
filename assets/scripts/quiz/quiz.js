@@ -85,7 +85,8 @@ function handleAnswer(isCorrect, isTimeout = false) {
     else if (timeLeft > 4000) multiplier = 1.5; // More than 4 seconds
   }
 
-  const pointsAwarded = isCorrect ? betAmount * multiplier : -betAmount;
+  let pointsAwarded = isCorrect ? betAmount * multiplier : -betAmount;
+  pointsAwarded = Math.floor(pointsAwarded);
   updateUserPoints(pointsAwarded);
 
   const answerButtons = document.querySelectorAll("#answers button");
@@ -210,9 +211,9 @@ async function onComplete() {
   `;
   quizContainer.innerHTML = html;
 
-  displayVerses();
+  await displayVerses();
 
-  const userScore = quizState.points; // Assuming this is the user's score
+  const userScore = quizState.points;
   let leaderboardData;
   try {
     const response = await fetch(
