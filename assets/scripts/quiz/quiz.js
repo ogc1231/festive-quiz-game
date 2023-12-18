@@ -4,6 +4,11 @@ import {
   questions,
   goToNextQuestion,
   resetProgressBar,
+  getTimerValue,
+  getTimeOutPenalty,
+  calcTimeOutPenalty,
+  getDifficultyLevel,
+  addHighScoreToLeaderboard,
 } from "./utils.js";
 import {
   updateUserPoints,
@@ -31,21 +36,34 @@ const initialHtml = `<div id="quizContainer" class="container animate__animated 
 `;
 
 let timer;
-let timeLeft = 12; // todo: make this dynamic based on difficulty setting
+let timeLeft = getTimerValue();
+
+console.log(timeLeft);
 
 function startTimer() {
   clearTimeout(timer);
   resetProgressBar();
-  timeLeft = 12;
+  timeLeft = getTimerValue();
   const progressBar = document.querySelector("#timerProgress");
-  progressBar.classList.add("progress-bar-animate");
+
+  requestAnimationFrame(() => {
+    progressBar.classList.add("progress-bar-animate");
+    progressBar.style.animation = `countdown ${
+      timeLeft / 1000
+    }s linear forwards`;
+  });
+
   timer = setTimeout(() => {
     handleTimeOut();
-  }, 20000);
+  }, timeLeft);
 }
 
 function handleTimeOut() {
-  updateUserPoints(-10); // todo 10 for easy, 15 for medium or 20 for difficult etc
+  const penalty = calcTimeOutPenalty(
+    getDifficultyLevel(),
+    quizState.currentQuestionIndex
+  );
+  updateUserPoints(penalty);
   handleAnswer(false, true);
 }
 
@@ -53,10 +71,19 @@ function handleAnswer(isCorrect, isTimeout = false) {
   const betAmount = quizState.userBet;
   clearInterval(timer);
   resetProgressBar();
+
+  const difficulty = getDifficultyLevel();
   let multiplier = 1;
-  if (timeLeft > 9)
-    multiplier = 2; // todo: make this dynamic based on difficulty setting
-  else if (timeLeft > 5) multiplier = 1.5;
+
+  if (difficulty === "easy") {
+    if (timeLeft > 10000) multiplier = 1.5; // More than 10 seconds
+  } else if (difficulty === "medium") {
+    if (timeLeft > 9000) multiplier = 2; // More than 9 seconds
+    else if (timeLeft > 5000) multiplier = 1.8; // More than 5 seconds
+  } else if (difficulty === "hard") {
+    if (timeLeft > 6000) multiplier = 2; // More than 6 seconds
+    else if (timeLeft > 4000) multiplier = 1.5; // More than 4 seconds
+  }
 
   const pointsAwarded = isCorrect ? betAmount * multiplier : -betAmount;
   updateUserPoints(pointsAwarded);
@@ -119,7 +146,7 @@ function renderNextQuestionButton() {
   const isLastQuestion =
     quizState.currentQuestionIndex === questions.length - 1;
   nextButton.textContent = isLastQuestion ? "Finish" : "Next Question";
-  nextButton.className = "btn btn-primary my-3";
+  nextButton.className = "next-finish-button btn btn-success my-3";
   nextButton.style.display = "block";
   nextButton.style.margin = "0 auto";
 
@@ -159,22 +186,22 @@ const twelveDaysOfChristmas = [
   "On the twelfth day of Christmas, my true love sent to me: 12 Drummers Drumming, 11 Pipers Piping, 10 Lords a Leaping, 9 Ladies Dancing, 8 Maids a Milking, 7 Swans a Swimming, 6 Geese a Laying, 5 Golden Rings, 4 Calling Birds, 3 French Hens, 2 Turtle Doves, and a Partridge in a Pear Tree.",
 ];
 
-function onComplete() {
+async function onComplete() {
   const quizContainer = document.querySelector("#quiz");
   const html = `
     <div class="container animate__animated animate__fadeIn">
       <div class="row mx-auto border border-danger border-3 rounded-4">
         <div class="col-md-6">
-          <img src="assets/images/12Days.png" alt="Quiz Rules" class="img-fluid">
+          <img src="../../assets/images/12Days.png" alt="Quiz Rules" class="img-fluid">
         </div>
         <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
           <div">
             <h2 class="h2">Congratulations!</h2>
-            <h2 class="h4">Score:</h2>
+            <h2 class="h4">Score: ${quizState.points}</h2>
             <div id="verseContainer" class="animate__animated text-center content-fixed-height h4 d-flex justify-content-center align-items-center"></div>
             <div class="button-group">
-              <a id="playAgainButton" href="quiz.html" class="btn btn-success my-3">Play Again</a>
-              <a id="homeButton" href="index.html" class="btn btn-danger my-3">Back to Homepage</a>
+              <a id="playAgainButton" href="/quiz" class="btn btn-success my-3">Play Again</a>
+              <a id="homeButton" href="/home" class="btn btn-danger my-3">Back to Homepage</a>
             </div>
           </div>
         </div>
@@ -182,9 +209,42 @@ function onComplete() {
     </div>
   `;
   quizContainer.innerHTML = html;
+
   displayVerses();
-  // Display the first verse immediately
-  displayNextVerse();
+
+  const userScore = quizState.points; // Assuming this is the user's score
+  let leaderboardData;
+  try {
+    const response = await fetch(
+      "https://trivia-api-fe683df325a4.herokuapp.com/leaderboard"
+    );
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    leaderboardData = data;
+  } catch (error) {
+    console.error("Error fetching leaderboard:", error);
+  }
+
+  if (leaderboardData && leaderboardData.length > 0) {
+    const lowestLeaderboardScore =
+      leaderboardData[leaderboardData.length - 1].score;
+    if (userScore > lowestLeaderboardScore) {
+      const userName = prompt(
+        "You made it to the leaderboard! Enter your name:"
+      );
+      if (userName) {
+        addHighScoreToLeaderboard(userName, quizState.points)
+          .then((response) => {
+            console.log("Added to leaderboard:", response);
+          })
+          .catch((error) => {
+            console.error("Error adding to leaderboard:", error);
+          });
+      }
+    }
+  }
 }
 
 function displayVerses() {
@@ -240,7 +300,7 @@ function updateQuestion() {
     const answerCol = document.createElement("div");
     answerCol.className = "col-md-6 mb-3";
     const answerButton = document.createElement("button");
-    answerButton.className = "btn btn-info w-100";
+    answerButton.className = "btn btn-success w-100";
     answerButton.textContent = answer;
     if (currentQuestion.type === "boolean") {
       answerButton.onclick = () =>
@@ -284,13 +344,13 @@ function displayGameOverMessage() {
     <div class="container animate__animated animate__fadeIn">
       <div class="row mx-auto border border-danger border-3 rounded-4">
         <div class="col-md-6">
-          <img src="assets/images/crash.png" alt="Quiz Rules" class="img-fluid">
+          <img src="../../assets/images/crash.png" alt="Quiz Rules" class="img-fluid">
         </div>
         <div class="col-md-6 d-flex flex-column justify-content-center">
           <h3 class="text-center h2 fw-bold ">Game Over!</h3>
           <div>
-          <a id="startButton" href="quiz.html" class="btn btn-success my-3">Play Again</a>
-          <a href="index.html" class="btn btn-danger my-3">Back to Home</a>
+          <a id="startButton" href="/quiz" class="btn btn-success my-3">Play Again</a>
+          <a href="/home" class="btn btn-danger my-3">Back to Home</a>
 </div>
         </div>
       </div>

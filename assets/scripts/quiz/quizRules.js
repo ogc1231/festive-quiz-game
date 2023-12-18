@@ -6,14 +6,14 @@ function setQuizParameters() {
   if (storedData) {
     try {
       const formData = JSON.parse(storedData);
-      const difficultyLevel = formData[0].difficultyLevel;
+      const difficultyLevel = formData.difficultyLevel;
 
       switch (difficultyLevel) {
         case "easy":
           points = 200;
-          time = 20;
+          time = 15;
           break;
-        case "difficult":
+        case "hard":
           points = 50;
           time = 8;
           break;
