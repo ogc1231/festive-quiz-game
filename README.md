@@ -24,8 +24,7 @@
 
 # Christmas Quiz Game
 
-![Game Screenshot/Logo]
-
+![screenshot](https://github.com/ogc1231/festive-quiz-game/blob/main/documentation/readme/quiz-game-responsiveness.png)
 ## Description
 
 Welcome to the Christmas Quiz Game! This game is designed to test your knowledge about Christmas traditions, history, songs, movies, and more. Challenge yourself or play with friends and family to see who knows the most about the festive season!
