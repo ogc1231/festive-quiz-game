@@ -78,8 +78,8 @@ function handleAnswer(isCorrect, isTimeout = false) {
   if (difficulty === "easy") {
     if (timeLeft > 10000) multiplier = 1.5; // More than 10 seconds
   } else if (difficulty === "medium") {
-    if (timeLeft > 9000) multiplier = 2; // More than 9 seconds
-    else if (timeLeft > 5000) multiplier = 1.8; // More than 5 seconds
+    if (timeLeft > 9000) multiplier = 1.8; // More than 9 seconds
+    else if (timeLeft > 5000) multiplier = 1.5; // More than 5 seconds
   } else if (difficulty === "hard") {
     if (timeLeft > 6000) multiplier = 2; // More than 6 seconds
     else if (timeLeft > 4000) multiplier = 1.5; // More than 4 seconds
@@ -201,7 +201,7 @@ async function onComplete() {
             <div id="verseContainer" class="animate__animated text-center content-fixed-height h4 d-flex justify-content-center align-items-center"></div>
             <div class="button-group">
               <a id="playAgainButton" href="/quiz" class="btn btn-success my-3">Play Again</a>
-              <a id="homeButton" href="/home" class="btn btn-danger my-3">Back to Homepage</a>
+              <a id="homeButton" href="/" class="btn btn-danger my-3">Back to Homepage</a>
             </div>
           </div>
         </div>
@@ -350,7 +350,7 @@ function displayGameOverMessage() {
           <h3 class="text-center h2 fw-bold ">Game Over!</h3>
           <div>
           <a id="startButton" href="/quiz" class="btn btn-success my-3">Play Again</a>
-          <a href="/home" class="btn btn-danger my-3">Back to Home</a>
+          <a href="/" class="btn btn-danger my-3">Back to Home</a>
 </div>
         </div>
       </div>
