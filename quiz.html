@@ -18,7 +18,7 @@
     <!-- Favicon -->
     <link
       rel="shortcut icon"
-      href="assets/images/favicon-snowman.png"
+      href="./assets/images/favicon-snowman.png"
       type="image/x-icon"
     />
     <!-- Font Awesome -->
@@ -48,13 +48,13 @@
       crossorigin="anonymous"
     ></script>
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/global.css" />
-    <link rel="stylesheet" href="assets/css/quiz.css" />
+    <link rel="stylesheet" href="./assets/css/global.css" />
+    <link rel="stylesheet" href="./assets/css/quiz.css" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Festive Quiz</a>
+        <a class="navbar-brand" href="/">Festive Quiz</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -69,7 +69,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html"
+              <a class="nav-link active" aria-current="page" href="/"
                 >Home</a
               >
             </li>
@@ -80,7 +80,7 @@
               <a class="nav-link" href="settings.html">Settings</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="leader-board.html">Leaderboard</a>
+              <a class="nav-link" href="leaderboard.html">Leaderboard</a>
             </li>
           </ul>
         </div>
@@ -92,7 +92,7 @@
         <!-- Image Column -->
         <div class="col-md-6">
           <img
-            src="assets/images/elfRules.png"
+            src="./assets/images/elfRules.png"
             alt="Quiz Rules"
             class="img-fluid"
           />
@@ -101,7 +101,8 @@
         <!-- Text and Button Column -->
         <div class="col-md-6 d-flex flex-column align-items-center">
           <h2 class="pt-4">
-            Answer 12 questions with a festive twist, one for each day of Christmas.
+            Answer 12 questions with a festive twist, one for each day of
+            Christmas.
           </h2>
 
           <ul class="custom-list">
@@ -117,19 +118,22 @@
             <li>
               If your answer is correct, you will gain the points you bet.
             </li>
-            <li>If you answer faster, you might double your points.</li>
+            <li>If you answer faster, you might get bonus points.</li>
             <li>If you you loose all your points, the game will end.</li>
             <li>Good luck!!!</li>
           </ul>
 
-          <a id="startButton" href="quizpage.html" class="btn btn-success my-3 btn-lg mb-4"
+          <a
+            id="startButton"
+            href="/quiz-start.html"
+            class="btn btn-success my-3 btn-lg mb-4"
             >Start Quiz</a
           >
         </div>
       </div>
     </div>
 
-    <script src="assets/scripts/script.js"></script>
-    <script src="assets/scripts/quiz/quizRules.js"></script>
+    <script src="./assets/scripts/script.js"></script>
+    <script src="./assets/scripts/quiz/quizRules.js"></script>
   </body>
 </html>

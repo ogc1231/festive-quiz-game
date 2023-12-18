@@ -18,7 +18,7 @@
     <!-- Favicon -->
     <link
       rel="shortcut icon"
-      href="assets/images/favicon-snowman.png"
+      href="./assets/images/favicon-snowman.png"
       type="image/x-icon"
     />
     <!-- Font Awesome -->
@@ -48,13 +48,13 @@
       crossorigin="anonymous"
     ></script>
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/global.css">
-    <link rel="stylesheet" href="assets/css/settings.css">
+    <link rel="stylesheet" href="./assets/css/global.css" />
+    <link rel="stylesheet" href="./assets/css/settings.css" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Festive Quiz</a>
+        <a class="navbar-brand" href="/">Festive Quiz</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -69,7 +69,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html"
+              <a class="nav-link active" aria-current="page" href="/"
                 >Home</a
               >
             </li>
@@ -80,7 +80,7 @@
               <a class="nav-link" href="settings.html">Settings</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="leader-board.html">Leaderboard</a>
+              <a class="nav-link" href="leaderboard.html">Leaderboard</a>
             </li>
           </ul>
         </div>
@@ -155,7 +155,7 @@
             class="form-check-input"
             type="radio"
             name="inlineRadioOptions2"
-            value="mutiple-choice-only"
+            value="multiple"
           />
           <label class="form-check-label" for="inlineRadio22"
             >Mutiple Choice Only</label
@@ -166,7 +166,7 @@
             class="form-check-input"
             type="radio"
             name="inlineRadioOptions2"
-            value="true-or-false-only"
+            value="boolean"
           />
           <label class="form-check-label" for="inlineRadio23"
             >True or False Only</label
@@ -175,14 +175,21 @@
       </div>
 
       <div>
-        <button class="btn btn-save" id="save-set-btn" type="submit" value="submit">
+        <button
+          class="btn btn-save"
+          id="save-set-btn"
+          type="submit"
+          value="submit"
+        >
           Save Settings
         </button>
-        <button class="btn btn-reset" id="reset-btn" type="reset" value="reset">Reset Default</button>
+        <button class="btn btn-reset" id="reset-btn" type="reset" value="reset">
+          Reset Default
+        </button>
       </div>
     </form>
 
-    <script src="assets/scripts/script.js"></script>
-    <script src="assets/scripts/settings.js"></script>
+    <script src="./assets/scripts/script.js"></script>
+    <script src="./assets/scripts/settings.js"></script>
   </body>
 </html>

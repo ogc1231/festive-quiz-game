@@ -20,11 +20,9 @@ document
   });
 
 function saveFormData(formData) {
-  const storedFormData = JSON.parse(localStorage.getItem("formData")) || [];
-
-  storedFormData.push(formData);
-
-  localStorage.setItem("formData", JSON.stringify(storedFormData));
+  localStorage.clear();
+  localStorage.setItem("formData", JSON.stringify(formData));
+  alert('settings updated');
 }
 
 // Clear localstorage
@@ -32,4 +30,6 @@ const resetBtn = document.getElementById("reset-btn");
 
 resetBtn.addEventListener("click", function () {
   localStorage.clear();
+  alert('settings updated');
+
 });
