@@ -108,7 +108,6 @@ The quiz difficulty impacts the quiz's dynamics, such as the time available to a
 - Web browser (Chrome, Firefox, Safari, etc.)
 
 ## Technologies Used
-
 - HTML/CSS/JavaScript
 - [bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 - [animate.css](https://animate.style/)
@@ -137,6 +136,11 @@ The quiz difficulty impacts the quiz's dynamics, such as the time available to a
 
   - [GitHub](https://github.com/Renwar-P)
   - [LinkedIn](https://www.linkedin.com/in/renwar-pappiland-7aa1a414a/)
+
+- Ngozi Omenka
+
+  - [GitHub](https://github.com/ngozi89)
+  - [LinkedIn](https://www.linkedin.com/in/ngozi-omenka/)  
 
 - Attribution for any external resources used (images, libraries, etc.)
 
