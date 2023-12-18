@@ -33,3 +33,16 @@ resetBtn.addEventListener("click", function () {
   alert('settings updated');
 
 });
+
+// Save state of settings
+localStorage.getItem('formData')
+
+const formData = JSON.parse(localStorage.getItem('formData'));
+
+if (formData.difficultyLevel) {
+  document.querySelector(`input[name="inlineRadioOptions"][value="${formData.difficultyLevel}"]`).checked = true;
+}
+
+if (formData.questionType) {
+  document.querySelector(`input[name="inlineRadioOptions2"][value="${formData.questionType}"]`).checked = true;
+}
