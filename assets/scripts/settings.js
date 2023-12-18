@@ -35,15 +35,18 @@ resetBtn.addEventListener("click", function () {
 });
 
 // Save state of settings
-localStorage.getItem('formData')
+document.addEventListener('DOMContentLoaded', function() {
 
-const formData1 = JSON.parse(localStorage.getItem('formData'));
-const formData2 = JSON.parse(localStorage.getItem('formData'));
+  localStorage.getItem('formData')
 
-if (formData1.difficultyLevel) {
+  const formData1 = JSON.parse(localStorage.getItem('formData'));
+  const formData2 = JSON.parse(localStorage.getItem('formData'));
+
+  if (formData1.difficultyLevel) {
   document.querySelector(`input[name="inlineRadioOptions"][value="${formData1.difficultyLevel}"]`).checked = true;
-}
+  }
 
-if (formData2.questionType) {
+  if (formData2.questionType) {
   document.querySelector(`input[name="inlineRadioOptions2"][value="${formData2.questionType}"]`).checked = true;
-}
+  }
+});
