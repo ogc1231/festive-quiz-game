@@ -62,12 +62,6 @@ Welcome to the Christmas Quiz Game! This game is designed to test your knowledge
 - Game developed by:
   # Team
 
-- Name
-
-  - [GitHub](https://github.com/Username)
-  - [LinkedIn](https://www.linkedin.com/in/Username/)
-
-
 - Oliver Craigie
 
   - [GitHub](https://github.com/ogc1231)
@@ -85,6 +79,11 @@ Welcome to the Christmas Quiz Game! This game is designed to test your knowledge
 - Renwar Pappiland
   - [GitHub](https://github.com/Renwar-P)
   - [LinkedIn](https://www.linkedin.com/in/renwar-pappiland-7aa1a414a/)
+
+- Ngozi Omenka
+
+  - [GitHub](https://github.com/ngozi89)
+  - [LinkedIn](https://www.linkedin.com/in/ngozi-omenka/)  
 
 - Attribution for any external resources used (images, libraries, etc.)
 
