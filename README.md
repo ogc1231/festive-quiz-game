@@ -128,7 +128,7 @@ The quiz difficulty impacts the quiz's dynamics, such as the time available to a
 - HTML/CSS/JavaScript
 - [bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 - [animate.css](https://animate.style/)
-- [trivia api](https://trivia-api-fe683df325a4.herokuapp.com/trivia)
+- [trivia api](https://holiday-trivia.onrender.com/trivia)
 
 ## Credits
 

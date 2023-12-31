@@ -111,7 +111,7 @@ async function fetchTriviaQuestions() {
     .join("&");
 
   const response = await fetch(
-    `https://trivia-api-fe683df325a4.herokuapp.com/trivia?${queryString}`
+    `https://holiday-trivia.onrender.com/trivia?${queryString}`
   );
   const data = await response.json();
 
@@ -151,7 +151,7 @@ export async function addHighScoreToLeaderboard(username, score) {
   console.log(typeof score);
   try {
     const response = await fetch(
-      "https://trivia-api-fe683df325a4.herokuapp.com/leaderboard",
+      "https://holiday-trivia.onrender.com/leaderboard",
       {
         method: "POST",
         headers: {
