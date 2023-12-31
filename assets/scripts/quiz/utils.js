@@ -111,7 +111,7 @@ async function fetchTriviaQuestions() {
     .join("&");
 
   const response = await fetch(
-    `https://trivia-api-fe683df325a4.herokuapp.com/trivia?${queryString}`
+    `https://holiday-trivia.onrender.com/trivia?${queryString}`
   );
   const data = await response.json();
 
