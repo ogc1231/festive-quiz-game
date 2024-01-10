@@ -1,7 +1,7 @@
 export async function fetchLeaderboard() {
   try {
     const response = await fetch(
-      "https://trivia-api-fe683df325a4.herokuapp.com/leaderboard"
+      "https://holiday-trivia.onrender.com/leaderboard"
     );
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
